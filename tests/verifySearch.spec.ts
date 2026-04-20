@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import { FastworkMainPage } from '../pages/FastworkMainPage';
-import { FastworkSearchResultPage } from '../pages/FastworkSearchResultPage';
+import { FastworkMainPage } from '../pages/mainPage';
+import { FastworkSearchResultPage } from '../pages/searchResultPage';
 
 test('Verify user able to search work in main page', async ({ page }) => {
   const searchTerm = 'รับทํา logo';

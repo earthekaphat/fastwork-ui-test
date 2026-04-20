@@ -1,5 +1,5 @@
 import { Page, expect } from '@playwright/test';
-import { FastworkLocators } from '../locators/FastworkLocators';
+import { searchResultPageLocators } from '../locators/searchResultPageLocators';
 
 export class FastworkSearchResultPage {
   constructor(private page: Page) {}
@@ -10,8 +10,8 @@ export class FastworkSearchResultPage {
   }
 
   async clearSearchAndVerify() {
-    await this.page.locator(FastworkLocators.clearButton).click();
-    const searchInput = this.page.locator(FastworkLocators.searchInputSpecific);
+    await this.page.locator(searchResultPageLocators.clearButton).click();
+    const searchInput = this.page.locator(searchResultPageLocators.searchInput);
     await expect(searchInput).toHaveValue('');
   }
 

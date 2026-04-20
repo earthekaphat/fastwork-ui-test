@@ -1,5 +1,5 @@
 import { expect, Page } from '@playwright/test';
-import { FastworkLocators } from '../locators/FastworkLocators';
+import { mainPageLocators as mainPageLocators } from '../locators/mainPageLocators';
 
 export class FastworkMainPage {
   constructor(private page: Page) {}
@@ -16,10 +16,10 @@ export class FastworkMainPage {
   }
 
   async searchForService(searchTerm: string) {
-    const searchInput = this.page.locator(FastworkLocators.searchInput);
+    const searchInput = this.page.locator(mainPageLocators.searchInput);
     await searchInput.waitFor({ state: 'visible' });
     await searchInput.fill(searchTerm);
-    await this.page.locator(FastworkLocators.searchButton).nth(1).click();
+    await this.page.locator(mainPageLocators.searchButton).nth(1).click();
     await this.page.waitForLoadState();
   }
 }
